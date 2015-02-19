@@ -1,0 +1,14 @@
+                                                                   development: &default
+                                                                     adapter: postgresql
+                                                                     database: copycopter_development
+                                                                     min_messages: WARNING
+                                                                     host: <%= ENV['POSTGRES_HOST'] %>
+                                                                     username: <%= ENV['POSTGRES_USER'] %>
+                                                                     password: <%= ENV['POSTGRES_PASSWORD'] %>
+
+                                                                   test: &test
+                                                                     <<: *default
+                                                                     database: copycopter_test
+
+                                                                   EOF
+ls -al

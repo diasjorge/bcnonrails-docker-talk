@@ -1,0 +1,18 @@
+web:
+  build: .
+  ports:
+    - "3000:3000"
+  links:
+    - postgres
+  volumes:
+    - ".:/app"
+  environment:
+    POSTGRES_HOST: 'postgres'
+    POSTGRES_PASSWORD: 'copycopter-dev'
+    POSTGRES_USER: 'copycopter'
+
+postgres:
+  image: 'postgres'
+  environment:
+    POSTGRES_USER: 'copycopter'
+    POSTGRES_PASSWORD: 'copycopter-dev'

@@ -1,0 +1,9 @@
+<% content_for :header do %>
+  <h2><strong>Projects</strong></h2>
+<% end %>
+
+<ul class='projects'>
+  <% @projects.each do |project| %>
+    <li><%= link_to project.name, project %></li>
+  <% end %>
+</ul>
